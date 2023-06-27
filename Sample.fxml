@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane minHeight="600.0" minWidth="630.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <TextField id="txtSearch" fx:id="txtSearch" layoutX="64.0" layoutY="118.0" prefHeight="34.0" prefWidth="211.0" />
+      <Button fx:id="btnGuess" layoutX="345.0" layoutY="118.0" mnemonicParsing="false" onAction="#btnGuessClick" prefHeight="34.0" prefWidth="94.0" text="Guess" />
+      <Pane fx:id="pane" layoutY="166.0" prefHeight="112.0" prefWidth="615.0">
+         <children>
+            <TextField id="txtName" fx:id="txtName" layoutY="20.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtYear" fx:id="txtYear" layoutX="108.0" layoutY="20.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtGenre" fx:id="txtGenre" layoutX="214.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtOrigin" fx:id="txtOrigin" layoutX="316.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtDirector" fx:id="txtDirector" layoutX="418.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtStar" fx:id="txtStar" layoutX="521.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane2" layoutY="370.0" prefHeight="112.0" prefWidth="615.0">
+         <children>
+            <TextField id="txtName2" fx:id="txtName2" layoutY="20.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtYear2" fx:id="txtYear2" layoutX="108.0" layoutY="20.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtGenre2" fx:id="txtGenre2" layoutX="214.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtOrigin2" fx:id="txtOrigin2" layoutX="316.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtDirector2" fx:id="txtDirector2" layoutX="418.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtStar2" fx:id="txtStar2" layoutX="521.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane1" layoutY="266.0" prefHeight="112.0" prefWidth="615.0">
+         <children>
+            <TextField id="txtName1" fx:id="txtName1" layoutY="20.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtYear1" fx:id="txtYear1" layoutX="108.0" layoutY="20.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtGenre1" fx:id="txtGenre1" layoutX="214.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtOrigin1" fx:id="txtOrigin1" layoutX="316.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtDirector1" fx:id="txtDirector1" layoutX="418.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+            <TextField id="txtStar1" fx:id="txtStar1" layoutX="521.0" layoutY="22.0" prefHeight="73.0" prefWidth="94.0" />
+         </children>
+      </Pane>
+      <Button fx:id="btnRestart" layoutX="264.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnRestartClick" prefHeight="41.0" prefWidth="76.0" text="Restart" />
+   </children>
+</AnchorPane>
