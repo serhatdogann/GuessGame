@@ -119,12 +119,16 @@ public class SampleController {
                 setTextFieldColor(txtDirector, "Christopher Nolan");
                 setTextFieldColor(txtStar, "Christian Bale");
 
-                if (areAllFieldsGreen()) {
+                if (movieName.equalsIgnoreCase("The Dark Knight")) {
                     showCongratulationsDialog();
+                    btnGuess.setDisable(true);
                     btnRestart.setVisible(true);
+                   
+                    
                 }else {
-                			btnRestart.setVisible(false);
-				}
+    				btnRestart.setVisible(false);
+    			}
+               
             } else if (guessCount == 2) {
                 setMovieFields(movie, txtName1, txtYear1, txtGenre1, txtOrigin1, txtDirector1, txtStar1);
                 pane1.setVisible(true);
@@ -136,12 +140,12 @@ public class SampleController {
                 setTextFieldColor(txtDirector1, "Christopher Nolan");
                 setTextFieldColor(txtStar1, "Christian Bale");
 
-                if (areAllFieldsGreen()) {
+                if (movieName.equalsIgnoreCase("The Dark Knight")) {
                     showCongratulationsDialog();
                     btnRestart.setVisible(true);
                 }else {
-					btnRestart.setVisible(false);
-				}
+    				btnRestart.setVisible(false);
+    			}
             } else {
                 setMovieFields(movie, txtName2, txtYear2, txtGenre2, txtOrigin2, txtDirector2, txtStar2);
                 pane2.setVisible(true);
@@ -151,31 +155,36 @@ public class SampleController {
                 setTextFieldColor(txtOrigin2, "USA");
                 setTextFieldColor(txtDirector2, "Christopher Nolan");
                 setTextFieldColor(txtStar2, "Christian Bale");
-
-                if (areAllFieldsGreen()) {
-                    showCongratulationsDialog();
-                    btnRestart.setVisible(true);
-                }else {
-					btnRestart.setVisible(false);
-				}
             }
+            
+            if (movieName.equalsIgnoreCase("The Dark Knight")) {
+                showCongratulationsDialog();
+                btnRestart.setVisible(true);
+            }else {
+				btnRestart.setVisible(false);
+			}
         } else {
+            showErrorMessage("YANLIS FILM ADI GIRDINIZ!");
             resetMovieFields();
-            pane.setVisible(true);
-            pane1.setVisible(true);
-            pane2.setVisible(true);
+            pane.setVisible(false);
+            pane1.setVisible(false);
+            pane2.setVisible(false);
+            btnRestart.setVisible(false);
         }
     }
+
 
     @FXML
     void btnRestartClick(ActionEvent event) {
     	
     	guessCount = 0;
+    	txtSearch.clear();
         resetMovieFields();
         pane.setVisible(false);
         pane1.setVisible(false);
         pane2.setVisible(false);
         btnRestart.setVisible(false);
+        btnGuess.setDisable(false);
     
     }
 
@@ -237,14 +246,8 @@ public class SampleController {
         txtStar2.setText("");
     }
 
-    private boolean areAllFieldsGreen() {
-        return txtName2.getStyle().equals("-fx-background-color: green;")
-                && txtYear2.getStyle().equals("-fx-background-color: green;")
-                && txtGenre2.getStyle().equals("-fx-background-color: green;")
-                && txtOrigin2.getStyle().equals("-fx-background-color: green;")
-                && txtDirector2.getStyle().equals("-fx-background-color: green;")
-                && txtStar2.getStyle().equals("-fx-background-color: green;");
-    }
+
+
 
     private void setTextFieldColor(TextField textField, String targetValue) {
         String fieldValue = textField.getText();
@@ -259,7 +262,7 @@ public class SampleController {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Tebrikler!");
         alert.setHeaderText(null);
-        alert.setContentText("Tüm alanları doğru tahmin ettiniz!");
+        alert.setContentText("Doğru Filmi Tahmin Ettiniz");
         alert.showAndWait();
     }
 }
